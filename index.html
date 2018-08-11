@@ -9,20 +9,209 @@
     <link rel="shortcut icon" href="./favicon (3).ico" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
+    <style>
+        #particles {
+            background: black;
+            height: 400px;
+        }
+    </style>
+    <div id="particles"></div>
     <div class="container">
+
         <div class="row">
+
             <div class="col">
                 <iframe src="https://open.spotify.com/embed?uri=spotify:user:21t7fzjj2njtro35wzu6ydiya:playlist:1C1wXxp0HMQG5K5nFlLhVx:&theme=white"
-                    width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    width="350" height="480" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
             </div>
             <div class="col">
-                <iframe id="lead" width="545" height="315" src="https://www.youtube.com/embed/ah6rnjWEFB4?autoplay=1" frameborder="0" allow="autoplay; encrypted-media"
+                <iframe id="lead" width="645" height="515" src="https://www.youtube.com/embed/ah6rnjWEFB4?autoplay=1" frameborder="0" allow="autoplay; encrypted-media"
                     allowfullscreen></iframe>
+                <button id="music-btn" type="button">Watch Some Music</button>
             </div>
         </div>
+    </div>
+    <script>
+        const videos = [
+            "https://www.youtube.com/embed/0RXdd0pCJ9Q?autoplay=1",
+            "https://www.youtube.com/embed/NhheiPTdZCw?autoplay=1",
+            "https://www.youtube.com/embed/TIJraYqUZ5g?autoplay=1",
+            "https://www.youtube.com/embed/5NlHYdxi85w?start=164",
+            "https://www.youtube.com/embed/KoQy_p3vNb8?autoplay=1",
+            "https://www.youtube.com/embed/Ev0jl6RS5Eo?autoplay=1",
+            "https://www.youtube.com/embed/7SsAYhC9UuE?autoplay=1",
+            "https://www.youtube.com/embed/rVeMiVU77wo?autoplay=1",
+            "https://www.youtube.com/embed/2CG5XMuz_nY?start=45",
+            "https://www.youtube.com/embed/6YzGOq42zLk?autoplay=1",
+            "https://www.youtube.com/embed/EEMcd48UwMI?autoplay=1",
+            "https://www.youtube.com/embed/vHb0ysdvs3Q?autoplay=1",
+            "https://www.youtube.com/embed/2FdP0eS47ts?autoplay=1",
+            "https://www.youtube.com/embed/aFUzvbkEvRk?autoplay=1",
+            "https://www.youtube.com/embed/rkB5bM_54sc?autoplay=1",
+            "https://www.youtube.com/embed/Nx94936Hl5Q?autoplay=1",
+            "https://www.youtube.com/embed/KyZDvZmvhik?autoplay=1",
+            "https://www.youtube.com/embed/_1gShXIO6pk?autoplay=1",
+            "https://www.youtube.com/embed/IJWlBfo5Oj0?autoplay=1",
+            "https://www.youtube.com/embed/qKax7euEM5Q?autoplay=1",
+            "https://www.youtube.com/embed/8IV___Motnc?autoplay=1",
+            "https://www.youtube.com/embed/A8tIuYwFcS0?autoplay=1",
+            "https://www.youtube.com/embed/AqZceAQSJvc?autoplay=1",
+            "https://www.youtube.com/embed/gtCcOGlGVT8?autoplay=1",
+            "https://www.youtube.com/embed/eEfy3KkEkTE?autoplay=1",
+            "https://www.youtube.com/embed/0Vkqx4nRLdc?autoplay=1"
+        ];
+
+
+        var clickOptions = [
+            "Keep Going",
+            "Keep Clicking",
+            "Keep It Real",
+            "Move Foward",
+            "Next Vid",
+            "What's Next",
+            "Click Here",
+            "Press Button",
+            "Enjoy Vid",
+            "Raise Roof",
+            "Rip It Hard",
+            "Shorty McDangles",
+            "WagWan",
+            "Stay Chill",
+            "Keep It Cool",
+            "Remain Frosty",
+            "Move It Along",
+            "next"
+        ];
+        // console.log(videos);
+        $("#music-btn").on("click", function (e) {
+            e.preventDefault();
+            var vid = videos[Math.floor(Math.random() * videos.length)];
+            console.log(vid);
+            $("#music-btn").html(
+                clickOptions[Math.floor(Math.random() * clickOptions.length)]
+            );
+            $("#lead").attr("src", vid);
+        });
+    </script>
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 10,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 80,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 300,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 2
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 12,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": false,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 800,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 800,
+                        "size": 80,
+                        "duration": 2,
+                        "opacity": 0.8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 400,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
 </body>
+
 
 </html>
